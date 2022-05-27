@@ -99,8 +99,8 @@
 			</attached_geometry>
 			<!--set de objetos tipo wrap asociados a este cuerpo, para crear caminos mucsulares. Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
 			<WrapObjectSet name="wrapobjectset">
-				<objects/>
-				<groups/>
+				<objects />
+				<groups />
 			</WrapObjectSet>
 		</Ground>
 		<!--Aceleracion de la gravedad, en este caso en y negativo. Acceleration due to gravity, expressed in ground.-->
@@ -108,7 +108,7 @@
 		<!--Descripción del modelo: Modelo vacío para el estudio del proceso de creación de nuevas simulaciones desde cero. Jaime Vélez, 2022.-->
 		<credits>Author: Jaime Vélez, 2022.</credits>
 		<!--Publicaciones y referencias. Publications and references associated with the model.-->
-		<publications/>
+		<publications></publications>
 		<!--Unidades distancia. Units for all lengths.-->
 		<length_units>meters</length_units>
 		<!--Unidades fuerzas. Units for all forces.-->
@@ -116,7 +116,7 @@
 		<!--Lista de cuerpos que componen el modelo. List of bodies that make up this model.-->
 		<BodySet name="bodyset">
 			<objects>
-				<Body name="brazo">
+				<Body name="block">
 					<!--The geometry used to display the axes of this Frame.-->
 					<FrameGeometry name="frame_geometry">
 						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
@@ -144,46 +144,8 @@
 					</attached_geometry>
 					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
 					<WrapObjectSet name="wrapobjectset">
-						<objects/>
-						<groups/>
-					</WrapObjectSet>
-					<!--The mass of the body (kg)-->
-					<mass>20</mass>
-					<!--The location (Vec3) of the mass center in the body frame.-->
-					<mass_center>0 0 0</mass_center>
-					<!--The elements of the inertia tensor (Vec6) as [Ixx Iyy Izz Ixy Ixz Iyz] measured about the mass_center and not the body origin.-->
-					<inertia>0.13333300000000001 0.13333300000000001 0.13333300000000001 0 0 0</inertia>
-				</Body>
-				<Body name="antebrazo">
-					<!--The geometry used to display the axes of this Frame.-->
-					<FrameGeometry name="frame_geometry">
-						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
-						<socket_frame>..</socket_frame>
-						<!--Scale factors in X, Y, Z directions respectively.-->
-						<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
-					</FrameGeometry>
-					<!--List of geometry attached to this Frame. Note, the geometry are treated as fixed to the frame and they share the transform of the frame when visualized-->
-					<attached_geometry>
-						<Mesh name="block_geom_1">
-							<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
-							<socket_frame>..</socket_frame>
-							<!--Scale factors in X, Y, Z directions respectively.-->
-							<scale_factors>1 1 1</scale_factors>
-							<!--Atributos de apariencia por defecto. Default appearance attributes for this Geometry-->
-							<Appearance>
-								<!--Opacidad (0 transparente, 1 opaco) The opacity used to display the geometry between 0:transparent, 1:opaque.-->
-								<opacity>0.5</opacity>
-								<!--Color del componente en rgb decimal (https://www.rapidtables.com/web/color/RGB_Color.html). The color, (red, green, blue), [0, 1], used to display the geometry. -->
-								<color>32 64 84</color>
-							</Appearance>
-							<!--Name of geometry file.-->
-							<mesh_file>block.vtp</mesh_file>
-						</Mesh>
-					</attached_geometry>
-					<!--Set of wrap objects fixed to this body that GeometryPaths can wrap over.This property used to be a member of Body but was moved up with the introduction of Frames.-->
-					<WrapObjectSet name="wrapobjectset">
-						<objects/>
-						<groups/>
+						<objects />
+						<groups />
 					</WrapObjectSet>
 					<!--The mass of the body (kg)-->
 					<mass>20</mass>
@@ -193,7 +155,7 @@
 					<inertia>0.13333300000000001 0.13333300000000001 0.13333300000000001 0 0 0</inertia>
 				</Body>
 			</objects>
-			<groups/>
+			<groups />
 		</BodySet>
 		<!--List of joints that connect the bodies.-->
 		<JointSet name="jointset">
@@ -217,7 +179,7 @@
 							<!--Flag indicating whether or not the values of the coordinates should be constrained to the current (e.g. default) value, above.-->
 							<locked>false</locked>
 							<!--If specified, the coordinate can be prescribed by a function of time. It can be any OpenSim Function with valid second order derivatives.-->
-							<prescribed_function/>
+							<prescribed_function />
 							<!--Flag indicating whether or not the values of the coordinates should be prescribed according to the function above. It is ignored if the no prescribed function is specified.-->
 							<prescribed>false</prescribed>
 						</Coordinate>
@@ -235,7 +197,7 @@
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
 							<socket_parent>/ground</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
-							<translation>0 5 0</translation>
+							<translation>0 0 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
 							<orientation>0 -1.5708 0</orientation>
 						</PhysicalOffsetFrame>
@@ -248,7 +210,7 @@
 								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
 							</FrameGeometry>
 							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
-							<socket_parent>/bodyset/brazo</socket_parent>
+							<socket_parent>/bodyset/block</socket_parent>
 							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
 							<translation>0 -0.050000000000000003 0</translation>
 							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
@@ -260,13 +222,13 @@
 		</JointSet>
 		<!--Controllers that provide the control inputs for Actuators.-->
 		<ControllerSet name="controllerset">
-			<objects/>
-			<groups/>
+			<objects />
+			<groups />
 		</ControllerSet>
 		<!--Constraints in the model.-->
 		<ConstraintSet name="constraintset">
-			<objects/>
-			<groups/>
+			<objects />
+			<groups />
 		</ConstraintSet>
 		<!--Forces in the model (includes Actuators).-->
 		<ForceSet name="forceset">
@@ -287,17 +249,17 @@
 								</PathPoint>
 								<PathPoint name="muscle1-point2">
 									<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame in which this path point is defined.).-->
-									<socket_parent_frame>/bodyset/brazo</socket_parent_frame>
+									<socket_parent_frame>/bodyset/block</socket_parent_frame>
 									<!--The fixed location of the path point expressed in its parent frame.-->
 									<location>0 0 -0.050000000000000003</location>
 								</PathPoint>
 							</objects>
-							<groups/>
+							<groups />
 						</PathPointSet>
 						<!--The wrap objects that are associated with this path-->
 						<PathWrapSet>
-							<objects/>
-							<groups/>
+							<objects />
+							<groups />
 						</PathWrapSet>
 						<!--Default appearance attributes for this GeometryPath-->
 						<Appearance>
@@ -340,17 +302,17 @@
 								</PathPoint>
 								<PathPoint name="muscle2-point2">
 									<!--Path to a Component that satisfies the Socket 'parent_frame' of type PhysicalFrame (description: The frame in which this path point is defined.).-->
-									<socket_parent_frame>/bodyset/tierra</socket_parent_frame>
+									<socket_parent_frame>/bodyset/block</socket_parent_frame>
 									<!--The fixed location of the path point expressed in its parent frame.-->
 									<location>0 0 0.050000000000000003</location>
 								</PathPoint>
 							</objects>
-							<groups/>
+							<groups />
 						</PathPointSet>
 						<!--The wrap objects that are associated with this path-->
 						<PathWrapSet>
-							<objects/>
-							<groups/>
+							<objects />
+							<groups />
 						</PathWrapSet>
 						<!--Default appearance attributes for this GeometryPath-->
 						<Appearance>
@@ -378,27 +340,27 @@
 					<default_fiber_length>0.25</default_fiber_length>
 				</Thelen2003Muscle>
 			</objects>
-			<groups/>
+			<groups />
 		</ForceSet>
 		<!--Markers in the model.-->
 		<MarkerSet name="markerset">
-			<objects/>
-			<groups/>
+			<objects />
+			<groups />
 		</MarkerSet>
 		<!--Geometry to be used in contact forces.-->
 		<ContactGeometrySet name="contactgeometryset">
-			<objects/>
-			<groups/>
+			<objects />
+			<groups />
 		</ContactGeometrySet>
 		<!--Probes in the model.-->
 		<ProbeSet name="probeset">
-			<objects/>
-			<groups/>
+			<objects />
+			<groups />
 		</ProbeSet>
 		<!--Additional components in the model.-->
 		<ComponentSet name="componentset">
-			<objects/>
-			<groups/>
+			<objects />
+			<groups />
 		</ComponentSet>
 	</Model>
 </OpenSimDocument>
