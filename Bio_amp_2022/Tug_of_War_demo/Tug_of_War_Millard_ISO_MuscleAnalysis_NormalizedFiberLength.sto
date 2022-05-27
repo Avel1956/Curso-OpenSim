@@ -1,0 +1,43 @@
+NormalizedFiberLength
+version=1
+nRows=31
+nColumns=2
+inDegrees=no
+
+This analysis gathers basic information about muscles during a simulation (e.g., forces, tendon lengths, moment arms, etc).
+Units are S.I. units (second, meters, Newtons, ...)
+If the header above contains a line with 'inDegrees', this indicates whether rotational values are in degrees (yes) or radians (no).
+
+endheader
+time	LeftMuscle
+      0.00000000	      0.97995578
+      0.00284987	      0.97753076
+      0.00671228	      0.96696191
+      0.00850015	      0.96154192
+      0.00954602	      0.95837724
+      0.01059188	      0.95520768
+      0.01479203	      0.94202996
+      0.01899217	      0.92761693
+      0.02563445	      0.90207099
+      0.03227674	      0.87366467
+      0.04377483	      0.81948500
+      0.05527291	      0.76077574
+      0.07688664	      0.64269547
+      0.08484607	      0.59788325
+      0.09935826	      0.52266602
+      0.10160626	      0.51262441
+      0.10332939	      0.50534577
+      0.10505251	      0.49848072
+      0.11252213	      0.47482829
+      0.12041165	      0.46255600
+      0.12830117	      0.45806523
+      0.14180604	      0.45489260
+      0.15531091	      0.45332761
+      0.17257389	      0.45212920
+      0.18983687	      0.45133935
+      0.21343697	      0.45058952
+      0.23703708	      0.45005131
+      0.27341304	      0.44945178
+      0.31726935	      0.44893938
+      0.38450766	      0.44839337
+      0.50000000	      0.44779110
